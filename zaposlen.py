@@ -39,9 +39,11 @@ def izracunaj_dohodnino(bruto_zasluzek,
     # Največ do zneska premije, ki je enak 24 % obveznih prispevkov za
     # pokojninsko in invalidsko zavarovanje za zavarovanca
     # Oziroma 5,844% pokojnine zavarovanca
-    znesek_olajsava_za_dodatno_pokojnino = min(premija_dod_pok_zav, 0.24 * prispevki)
+    znesek_olajsava_za_dodatno_pokojnino = min(
+        premija_dod_pok_zav, 0.24 * prispevki)
     # Ne več kot 2.819,09 eurov letno.
-    znesek_olajsava_za_dodatno_pokojnino = min(znesek_olajsava_za_dodatno_pokojnino, 2819.09)
+    znesek_olajsava_za_dodatno_pokojnino = min(
+        znesek_olajsava_za_dodatno_pokojnino, 2819.09)
 
     # =======================
     # Poračun
@@ -72,7 +74,7 @@ def izracunaj_dohodnino(bruto_zasluzek,
     return letna_dohodnina
 
 
-if __name__ == "__main__":
+def main():
     print("***| Informativni izracun dohodnine za zaposlenega |***")
     bruto_letni_zasluzek = float(input("Vnesite svoj bruto letni zasluzek: "))
 
@@ -89,7 +91,8 @@ if __name__ == "__main__":
     else:
         stevilo_vzdrzevanih_mesecev = 12
 
-    premija_dod_pok_zav = float(input("Letni znesek premije za dodatno pokojninsko zavarovanje (v eur): "))
+    premija_dod_pok_zav = float(
+        input("Letni znesek premije za dodatno pokojninsko zavarovanje (v eur): "))
 
     print("\nInformativni izračun: \n")
 
@@ -102,3 +105,7 @@ if __name__ == "__main__":
         premija_dod_pok_zav=premija_dod_pok_zav,
         izpisi=True
     )
+
+
+if __name__ == "__main__":
+    main()

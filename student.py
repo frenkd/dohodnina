@@ -66,12 +66,13 @@ def izracunaj_dohodnino(bruto_zasluzek,
         print(f"Olajšave skupaj: {olajsave:.2f}€")
         print(f"Neto letna davčna osnova: {neto_davcna_osnova:.2f}€")
         print(f"Letna dohodnina: {letna_dohodnina:.2f}€")
-        print(f"Dejanski neto letni zaslužek: {(bruto_zasluzek - prispevki - letna_dohodnina):.2f}€")
+        print(
+            f"Dejanski neto letni zaslužek: {(bruto_zasluzek - prispevki - letna_dohodnina):.2f}€")
 
     return letna_dohodnina
 
 
-if __name__ == "__main__":
+def main():
     print("***| Informativni izracun dohodnine za študenta |***\n")
     bruto_letni_zasluzek = float(input("Vnesite svoj bruto letni zasluzek: "))
 
@@ -93,3 +94,6 @@ if __name__ == "__main__":
         stroski_prevoza_in_nocitve=stroski_prevoza_in_nocitve,
         izpisi=True
     )
+
+if __name__ == "__main__":
+    main()
